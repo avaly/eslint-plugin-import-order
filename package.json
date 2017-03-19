@@ -47,16 +47,16 @@
   "devDependencies": {
     "babel-eslint": "next",
     "babel-preset-es2015-argon": "latest",
-    "babel-register": "6.16.3",
+    "babel-register": "6.24.0",
     "chai": "^3.4.0",
     "eslint": "3.x",
-    "eslint-import-resolver-node": "^0.2.0",
+    "eslint-import-resolver-node": "^0.3.0",
     "eslint-import-resolver-webpack": "^0.8.1",
     "eslint-module-utils": "^2.0.0",
     "gulp": "^3.9.0",
     "gulp-babel": "6.1.2",
     "mocha": "^3.1.2",
-    "rimraf": "2.5.2"
+    "rimraf": "2.6.1"
   },
   "peerDependencies": {
     "eslint": "2.x - 3.x"
