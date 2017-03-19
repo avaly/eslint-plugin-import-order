@@ -1,0 +1,67 @@
+{
+  "name": "@avaly/eslint-plugin-import-order",
+  "version": "1.0.0",
+  "description": "ESLint import order with Flow types support",
+  "engines": {
+    "node": ">=4"
+  },
+  "main": "lib/index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "watch": "NODE_PATH=./src mocha --watch --compilers js:babel-register --recursive tests/src",
+    "posttest": "eslint ./src",
+    "test": "BABEL_ENV=test NODE_PATH=./src mocha -R dot --recursive --compilers js:babel-register tests/src -t 5s",
+    "prepublish": "gulp prepublish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/avaly/eslint-plugin-import-order"
+  },
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "es6",
+    "jsnext",
+    "modules",
+    "import",
+    "flow",
+    "flowtype"
+  ],
+  "author": "Ben Mosher <me@benmosher.com>",
+  "contributors": [
+    {
+      "name": "Valentin Agachi",
+      "url": "http://agachi.name/"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/avaly/eslint-plugin-import-order/issues"
+  },
+  "homepage": "https://github.com/avaly/eslint-plugin-import-order",
+  "devDependencies": {
+    "babel-eslint": "next",
+    "babel-preset-es2015-argon": "latest",
+    "babel-register": "6.16.3",
+    "chai": "^3.4.0",
+    "eslint": "3.x",
+    "eslint-import-resolver-node": "^0.2.0",
+    "eslint-import-resolver-webpack": "^0.8.1",
+    "eslint-module-utils": "^2.0.0",
+    "gulp": "^3.9.0",
+    "gulp-babel": "6.1.2",
+    "mocha": "^3.1.2",
+    "rimraf": "2.5.2"
+  },
+  "peerDependencies": {
+    "eslint": "2.x - 3.x"
+  },
+  "dependencies": {
+    "eslint-plugin-import": "^2.2.0"
+  }
+}
