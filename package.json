@@ -1,6 +1,6 @@
 {
   "name": "@avaly/eslint-plugin-import-order",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ESLint import order with Flow types support",
   "engines": {
     "node": ">=4"
