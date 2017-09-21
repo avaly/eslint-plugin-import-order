@@ -20,3 +20,16 @@ This was not accepted in the upstream project: https://github.com/benmosher/esli
 # inside your project's working tree
 yarn add -D @avaly/eslint-plugin-import-order
 ```
+
+## Usage
+
+In your `.eslintrc.js`:
+
+```js
+module.exports = {
+  plugins: ['@avaly/eslint-plugin-import-order'],
+  rules: {
+    '@avaly/import-order/order': [ERROR],
+  }
+};
+```
