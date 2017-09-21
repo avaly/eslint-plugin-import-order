@@ -59,7 +59,7 @@
     "rimraf": "2.5.2"
   },
   "peerDependencies": {
-    "eslint": "2.x - 3.x"
+    "eslint": ">=2"
   },
   "dependencies": {
     "eslint-plugin-import": "^2.2.0"
