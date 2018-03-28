@@ -816,5 +816,48 @@ ruleTester.run('order', rule, {
         },
       ],
     }),
+    // GHI #2
+    test({
+      code: `
+        import type { SomeType } from './types';
+        import reducer, { someAction } from './store';
+        import * as API from '@/api';
+        import objectAssign from 'object-assign';
+      `,
+      parser: 'babel-eslint',
+      errors: [
+        {
+          line: 3,
+          message: '`./store` import should occur before import of `./types`',
+        },
+        {
+          line: 4,
+          message: '`@/api` import should occur before import of `./types`',
+        },
+        {
+          line: 5,
+          message: '`object-assign` import should occur before import of `./types`',
+        },
+      ],
+    }),
+    test({
+      code: `
+        import type { SomeType } from './types';
+        import reducer, { someAction } from './store';
+        import objectAssign from 'object-assign';
+        import * as API from '@/api';
+      `,
+      parser: 'babel-eslint',
+      errors: [
+        {
+          line: 2,
+          message: '`./types` import should occur after import of `@/api`',
+        },
+        {
+          line: 3,
+          message: '`./store` import should occur after import of `object-assign`',
+        },
+      ],
+    }),
   ],
 })
