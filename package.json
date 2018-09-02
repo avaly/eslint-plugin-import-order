@@ -62,6 +62,6 @@
     "eslint": ">=2"
   },
   "dependencies": {
-    "eslint-plugin-import": "^2.2.0"
+    "eslint-plugin-import": "^2.14.0"
   }
 }

@@ -402,6 +402,12 @@ ruleTester.run('order', rule, {
         },
       ],
     }),
+    test({
+      code: `
+        import storage from '@google-cloud/storage';
+        import async from 'async';
+      `,
+    }),
     // Flow imports
     test({
       code: `
@@ -795,6 +801,18 @@ ruleTester.run('order', rule, {
         {
           line: 2,
           message: 'There should be at least one empty line between import groups',
+        },
+      ],
+    }),
+    test({
+      code: `
+        import async from './relative';
+        import storage from '@google-cloud/storage';
+      `,
+      errors: [
+        {
+          line: 3,
+          message: '`@google-cloud/storage` import should occur before import of `./relative`',
         },
       ],
     }),
