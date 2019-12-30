@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "description": "ESLint import order with Flow types support",
   "engines": {
-    "node": ">=4"
+    "node": ">=8"
   },
   "main": "lib/index.js",
   "directories": {
@@ -13,10 +13,13 @@
     "lib"
   ],
   "scripts": {
-    "watch": "NODE_PATH=./src mocha --watch --compilers js:babel-register --recursive tests/src",
-    "posttest": "eslint ./src",
-    "test": "BABEL_ENV=test NODE_PATH=./src mocha -R dot --recursive --compilers js:babel-register tests/src -t 5s",
-    "prepublish": "gulp prepublish"
+    "build": "babel --quiet --out-dir lib src",
+    "prebuild": "rimraf lib",
+    "lint": "eslint .",
+    "watch": "NODE_PATH=./src mocha --watch --compilers js:@babel/register --recursive tests/src",
+    "posttest": "eslint .",
+    "test": "BABEL_ENV=test NODE_PATH=./src mocha -R dot --recursive --compilers js:@babel/register tests/src -t 5s",
+    "prepublish": "yarn build"
   },
   "repository": {
     "type": "git",
@@ -45,23 +48,23 @@
   },
   "homepage": "https://github.com/avaly/eslint-plugin-import-order",
   "devDependencies": {
-    "babel-eslint": "next",
-    "babel-preset-es2015-argon": "latest",
-    "babel-register": "6.16.3",
-    "chai": "^3.4.0",
-    "eslint": "3.x",
-    "eslint-import-resolver-node": "^0.2.0",
-    "eslint-import-resolver-webpack": "^0.8.1",
-    "eslint-module-utils": "^2.0.0",
-    "gulp": "^3.9.0",
-    "gulp-babel": "6.1.2",
-    "mocha": "^3.1.2",
-    "rimraf": "2.5.2"
+    "@babel/cli": "7.7.7",
+    "@babel/core": "7.7.7",
+    "@babel/preset-env": "7.7.7",
+    "@babel/register": "7.7.7",
+    "babel-eslint": "10.0.3",
+    "chai": "3.4.0",
+    "eslint": "6.8.0",
+    "eslint-import-resolver-node": "0.2.0",
+    "eslint-import-resolver-webpack": "0.8.1",
+    "mocha": "3.1.2",
+    "rimraf": "3.0.0"
   },
   "peerDependencies": {
     "eslint": ">=2"
   },
   "dependencies": {
-    "eslint-plugin-import": "^2.14.0"
+    "eslint-module-utils": "2.5.0",
+    "resolve": "1.14.1"
   }
 }

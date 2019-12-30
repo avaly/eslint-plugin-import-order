@@ -275,7 +275,7 @@ ruleTester.run('order', rule, {
         } from 'bar';
         import external from 'external'
       `,
-      options: [{ 'newlines-between': 'always' }]
+      options: [{ 'newlines-between': 'always' }],
     }),
     // Option newlines-between: 'always' with multiline imports #2
     test({
@@ -286,7 +286,7 @@ ruleTester.run('order', rule, {
 
         import external from 'external'
       `,
-      options: [{ 'newlines-between': 'always' }]
+      options: [{ 'newlines-between': 'always' }],
     }),
     // Option newlines-between: 'always' with multiline imports #3
     test({
@@ -297,7 +297,7 @@ ruleTester.run('order', rule, {
         import bar
           from './sibling';
       `,
-      options: [{ 'newlines-between': 'always' }]
+      options: [{ 'newlines-between': 'always' }],
     }),
     // Option newlines-between: 'always' with not assigned import #1
     test({
@@ -309,7 +309,7 @@ ruleTester.run('order', rule, {
 
         import _ from 'lodash';
       `,
-      options: [{ 'newlines-between': 'always' }]
+      options: [{ 'newlines-between': 'always' }],
     }),
     // Option newlines-between: 'never' with not assigned import #2
     test({
@@ -319,7 +319,7 @@ ruleTester.run('order', rule, {
         import 'something-else';
         import _ from 'lodash';
       `,
-      options: [{ 'newlines-between': 'never' }]
+      options: [{ 'newlines-between': 'never' }],
     }),
     // Option newlines-between: 'always' with not assigned require #1
     test({
@@ -331,7 +331,7 @@ ruleTester.run('order', rule, {
 
         var _ = require('lodash');
       `,
-      options: [{ 'newlines-between': 'always' }]
+      options: [{ 'newlines-between': 'always' }],
     }),
     // Option newlines-between: 'never' with not assigned require #2
     test({
@@ -341,7 +341,7 @@ ruleTester.run('order', rule, {
         require('something-else');
         var _ = require('lodash');
       `,
-      options: [{ 'newlines-between': 'never' }]
+      options: [{ 'newlines-between': 'never' }],
     }),
     // Option newlines-between: 'never' should ignore nested require statement's #1
     test({
@@ -358,7 +358,7 @@ ruleTester.run('order', rule, {
           }
         }
       `,
-      options: [{ 'newlines-between': 'never' }]
+      options: [{ 'newlines-between': 'never' }],
     }),
     // Option newlines-between: 'always' should ignore nested require statement's #2
     test({
@@ -374,7 +374,7 @@ ruleTester.run('order', rule, {
           }
         }
       `,
-      options: [{ 'newlines-between': 'always' }]
+      options: [{ 'newlines-between': 'always' }],
     }),
     // Option: newlines-between: 'always-and-inside-groups'
     test({
@@ -414,7 +414,7 @@ ruleTester.run('order', rule, {
         import foo from 'foo';
         import type { bar } from 'bar';
       `,
-      parser: 'babel-eslint',
+      parser: require.resolve('babel-eslint'),
       options: [{groups: [
         'external',
         'flow',
@@ -755,7 +755,7 @@ ruleTester.run('order', rule, {
         {
           groups: [
             ['builtin', 'index'],
-            ['sibling', 'parent', 'external']
+            ['sibling', 'parent', 'external'],
           ],
           'newlines-between': 'always',
         },
@@ -822,7 +822,7 @@ ruleTester.run('order', rule, {
         import type { bar } from 'bar';
         import foo from 'foo';
       `,
-      parser: 'babel-eslint',
+      parser: require.resolve('babel-eslint'),
       options: [{groups: [
         'external',
         'flow',
@@ -842,7 +842,7 @@ ruleTester.run('order', rule, {
         import * as API from '@/api';
         import objectAssign from 'object-assign';
       `,
-      parser: 'babel-eslint',
+      parser: require.resolve('babel-eslint'),
       errors: [
         {
           line: 3,
@@ -865,7 +865,7 @@ ruleTester.run('order', rule, {
         import objectAssign from 'object-assign';
         import * as API from '@/api';
       `,
-      parser: 'babel-eslint',
+      parser: require.resolve('babel-eslint'),
       errors: [
         {
           line: 2,

@@ -1,7 +1,7 @@
 'use strict'
 
-import importType from 'eslint-plugin-import/lib/core/importType'
-import isStaticRequire from 'eslint-plugin-import/lib/core/staticRequire'
+import importType from '../core/importType'
+import isStaticRequire from '../core/staticRequire'
 
 const defaultGroups = [
   'builtin',
